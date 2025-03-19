@@ -202,6 +202,7 @@ section{
     gap: 1.5rem;
     background: #eee;
     padding: 20px;
+    justify-items: center;
 }
 
 
@@ -463,6 +464,16 @@ section{
     color:var(--light-color);
     padding:1rem 0;
     line-height: 1.5;
+}
+
+.features{
+    text-align: center;
+}
+
+.features li{
+    font-size: 1.5rem;
+    color:var(--light-color);
+    list-style-position: inside;
 }
 
 /* media queries  */
@@ -772,11 +783,6 @@ h2 {
 }
 
 /* testimonials*/
-.testimonials{
-    background-color: #ecf2f8;
-    padding: 5% 3%;
-}
-
 .contact{
     background:url(../images/mountain.jpg) no-repeat;
     background-size: cover;
@@ -784,8 +790,37 @@ h2 {
     background-attachment: fixed;
 }
 
-#main-left .grid-item{
-    margin-right: 15px;
+.testimonials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#main-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#top, #bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-item {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    max-width: 400px;
+    color: white;
+    text-align: center;
 }
 
 .testimonials p{
