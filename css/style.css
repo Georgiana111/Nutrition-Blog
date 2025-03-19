@@ -796,8 +796,11 @@ h2 {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    background:url(../images/supermarket.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-
 #main-left {
     display: flex;
     flex-direction: column;
@@ -821,6 +824,7 @@ h2 {
     max-width: 400px;
     color: white;
     text-align: center;
+    margin-top: 50px;
 }
 
 .testimonials p{
