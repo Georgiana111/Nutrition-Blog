@@ -56,3 +56,4 @@ setInterval(nextSlide, 8000);
 showSlide(currentIndex);
 
 console.log( document.querySelectorAll('.faq-question'));
+
