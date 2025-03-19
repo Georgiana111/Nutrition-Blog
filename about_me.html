@@ -20,15 +20,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-
-
 </head>
 <body>
 
 <header class="header">
 
-    <a href="index.html" class="logo"><span>b</span>logger</a>
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Blogger Logo" style="height: 40px;">
+    </a>
 
     <nav class="navbar">
         <a href="index.html">Acasa</a>
@@ -60,21 +59,19 @@
 </section>
 
 <section class="about-section">
-    <img src="images/nutritionist.jpg" alt="Nutritionist" class="about-image">
+    <img src="images/nutritionist.jpg" alt="Nutritionist" class="about-image fade-in">
     <div class="about-text">
-        <h2>Despre Mine</h2>
-        <p>Sunt un nutriționist pasionat, dedicat sănătății și bunăstării clienților mei. Cu ani de experiență în domeniu, ofer planuri personalizate de nutriție și coaching pentru un stil de viață sănătos.</p>
-        <p>Scopul meu este să ajut oamenii să își atingă obiectivele de sănătate și fitness prin alegeri alimentare inteligente și sustenabile.</p>
-        <p>✔️ Ofer sfaturi bazate pe știință și studii de specialitate  
+        <h2 class="fade-in">Despre Mine</h2>
+        <p class="fade-in">Sunt un nutriționist pasionat, dedicat sănătății și bunăstării clienților mei. Cu ani de experiență în domeniu, ofer planuri personalizate de nutriție și coaching pentru un stil de viață sănătos.</p>
+        <p class="fade-in">Scopul meu este să ajut oamenii să își atingă obiectivele de sănătate și fitness prin alegeri alimentare inteligente și sustenabile.</p>
+        <p class="fade-in">✔️ Ofer sfaturi bazate pe știință și studii de specialitate  
            ✔️ Creez planuri nutriționale adaptate stilului tău de viață  
            ✔️ Susțin o alimentație echilibrată, fără restricții drastice  
            ✔️ Îți ofer motivație și ghidare pentru rezultate durabile</p>
-        <p>Pe blogul meu vei găsi articole despre nutriție, rețete sănătoase și recomandări personalizate pentru a-ți optimiza alimentația. Hai să descoperim împreună puterea unei alimentații corecte!</p>
-        <p>📩 Pentru colaborări sau întrebări, mă poți contacta aici: contact@cabinetpsihologie.ro</p>
+        <p class="fade-in">Pe blogul meu vei găsi articole despre nutriție, rețete sănătoase și recomandări personalizate pentru a-ți optimiza alimentația. Hai să descoperim împreună puterea unei alimentații corecte!</p>
+        <p class="fade-in">📩 Pentru colaborări sau întrebări, mă poți contacta aici: contact@cabinetpsihologie.ro</p>
     </div>
 </section>
-
-<!-- footer section ends -->
 
 <section class="stats-section">
     <div class="stat">
@@ -99,12 +96,11 @@
     </div>
 </section>
 
-
 <section class="about-benefits">
     <div class="about-text">
-        <h2>Certificari</h2>
+        <h2 class="fade-in">Certificari</h2>
         <br>
-        <ul>
+        <ul class="fade-in">
             <li>Certificare Tehnician Nutritionist – emis de Ministerul Muncii si Educatiei</li>
             <li>Certificat Fitoterapie</li>
             <li>Fitness Diet Nutrition Specialist</li>
@@ -113,11 +109,8 @@
         </ul>
     </div>
     <br>
-    <img src="images/mood.jpg" alt="mood" class="about-image">
+    <img src="images/mood.jpg" alt="mood" class="about-image fade-in">
 </section>
-
-
-
 
 <section class="footer">
 
@@ -160,7 +153,22 @@
                 answer.style.display = isVisible ? "none" : "block";
             });
         });
+
+        const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    elements.forEach(element => observer.observe(element));
+
     });
+
 </script>
     
 </body>

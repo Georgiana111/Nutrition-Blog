@@ -27,14 +27,13 @@ window.onscroll = () =>{
 
 let currentIndex = 0;
 const slides = document.querySelectorAll(".slide");
-const banner = document.querySelector(".banner");
+const banner = document.querySelector(".banner-carousel");
 const totalSlides = slides.length;
 
 function showSlide(index) {
     slides.forEach(slide => slide.classList.remove("active"));
     slides[index].classList.add("active");
 
-    // Schimbă imaginea de fundal a banner-ului
     let newBg = slides[index].getAttribute("data-bg");
     banner.style.backgroundImage = `url(${newBg})`;
 }
@@ -52,11 +51,8 @@ function prevSlide() {
 document.getElementById("nextBtn").addEventListener("click", nextSlide);
 document.getElementById("prevBtn").addEventListener("click", prevSlide);
 
-// Autoplay la fiecare 3 secunde
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 8000);
 
-// Setează imaginea inițială a banner-ului
 showSlide(currentIndex);
 
-// Q&A
 console.log( document.querySelectorAll('.faq-question'));
